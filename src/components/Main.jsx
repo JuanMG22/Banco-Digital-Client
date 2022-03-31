@@ -1,6 +1,7 @@
 import React from 'react'
 import Home from '../pages/Home'
 import UserPage from '../pages/UserPage'
+import LoginPage from '../pages/LoginPage'
 import { Route, Routes } from 'react-router-dom'
 
 const Main = () => {
@@ -9,6 +10,7 @@ const Main = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/user' element={<UserPage />} />
+        <Route path='/login' element={<LoginPage />} />
       </Routes>
     </main>
   )
