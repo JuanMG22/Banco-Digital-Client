@@ -23,7 +23,7 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className='menu w-full lg:block flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8'>
+        <div className='menu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8'>
           <div className='text-md font-bold text-white lg:flex-grow'>
             <Link
               to='/user'
