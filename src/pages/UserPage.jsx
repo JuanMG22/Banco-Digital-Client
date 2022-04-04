@@ -2,7 +2,7 @@ import saldo from '../img/saldo-01.jpg'
 
 const UserPage = () => {
   return (
-    <section className='flex-row sm:flex-col justify-center  items-center h-screen gap-x-3'>
+    <section className='flex flex-col lg:flex-row justify-evenly items-center h-screen gap-x-3'>
       <div className=' pl-6 pt-6'>
         <div className='w-96 h-90 bg-white border-2 border-gray-300 p-6 rounded-xl tracking-wide shadow-lg'>
           <div className='mb-4 divide-y divide-slate-700 '>
