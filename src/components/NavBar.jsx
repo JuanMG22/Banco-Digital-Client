@@ -31,12 +31,12 @@ const NavBar = () => {
             >
               Saldo
             </Link>
-            <a
-              href='#responsive-header'
+            <Link
+              to='/movimientos'
               className=' block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
             >
               Movimientos
-            </a>
+            </Link>
             <a
               href='#responsive-header'
               className='block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
