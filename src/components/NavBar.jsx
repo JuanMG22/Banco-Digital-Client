@@ -1,7 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Outlet, Link } from 'react-router-dom'
+import { userContext } from '../context/UserProvider'
+import { navLinks } from '../services/navLinks'
 
 const NavBar = () => {
+  const { login, logOut } = useContext(userContext)
+
+  const navBarLogin = login ? 'hidden' : 'block'
+  const navBarLogout = login ? 'inline-block' : 'hidden'
   return (
     <header>
       <nav
@@ -25,32 +31,35 @@ const NavBar = () => {
 
         <div className='menu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8'>
           <div className='text-md font-bold text-white lg:flex-grow'>
-            <Link
-              to='/user'
-              className='block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
-            >
-              Saldo
-            </Link>
-            <Link
-              to='/movimientos'
-              className=' block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
-            >
-              Movimientos
-            </Link>
-            <a
-              href='#responsive-header'
-              className='block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
-            >
-              Perfil
-            </a>
+
+            {
+              navLinks.map(link => (
+                <Link
+                  key={link.id}
+                  to={link.route}
+                  className={`${navBarLogout} mt-4 lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2`}
+                >
+                  {link.text}
+                </Link>
+              ))
+            }
           </div>
 
           <div className='flex '>
 
             <Link
               to='/login'
-              className=' block text-md px-4  ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0'
-            >login
+              className={`${navBarLogin} text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0`}
+            >
+              Login
+            </Link>
+
+            <Link
+              to='/'
+              onClick={logOut}
+              className={`${navBarLogout} text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0`}
+            >
+              LogOut
             </Link>
           </div>
         </div>
