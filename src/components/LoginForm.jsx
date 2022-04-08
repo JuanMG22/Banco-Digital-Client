@@ -18,7 +18,7 @@ const LoginForm = () => {
     const password = data.password
 
     axios
-      .post('http://localhost:4001/login', { email, password })
+      .post('https://banco-digital-nc.herokuapp.com/login', { email, password })
       .then(response => {
         console.log(response.data)
         const tokenRecibido = response.data.token
