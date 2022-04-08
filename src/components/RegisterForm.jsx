@@ -11,11 +11,9 @@ const RegisterForm = () => {
     const password = data.password
 
     axios
-      .post('https://banco-digital-nc.herokuapp.com/login', { email, password })
+      .post('https://banco-digital-nc.herokuapp.com/register', { email, password })
       .then(response => {
         console.log(response.data)
-        const tokenRecibido = response.data.token
-        localStorage.setItem('token', tokenRecibido)
         navigate('/login')
       })
       .catch((err) => console.log(err))
