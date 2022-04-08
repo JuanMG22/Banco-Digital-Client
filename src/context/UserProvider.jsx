@@ -13,8 +13,6 @@ const UserProvider = ({ children }) => {
   const signIn = () => {
     if (token) {
       setLogin(true)
-    } else {
-      setLogin(false)
     }
   }
 
