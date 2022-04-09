@@ -81,7 +81,7 @@ const LoginForm = () => {
       )}
       <div className='mt-8'>
         <Btn type='submit'>
-          Iniciar
+          Iniciar sesión
         </Btn>
       </div>
     </form>

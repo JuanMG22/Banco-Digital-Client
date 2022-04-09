@@ -1,22 +1,35 @@
 import axios from 'axios'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import Btn from './Btn'
 import Label from './Label'
 
 const RegisterForm = () => {
   const navigate = useNavigate()
   const onSubmit = (data) => {
-    const email = data.email.toLowerCase()
-    const password = data.password
+    const userData = {
+      name: data.name,
+      lastName: data.lastName,
+      email: data.email.toLowerCase(),
+      password: data.password
+    }
 
     axios
-      .post('https://banco-digital-nc.herokuapp.com/register', { email, password })
+      .post('https://banco-digital-nc.herokuapp.com/register', userData)
       .then(response => {
-        console.log(response.data)
-        navigate('/login')
+        console.log(response)
+        navigate('/')
       })
-      .catch((err) => console.log(err))
+      .catch(() => {
+        const MySwal = withReactContent(Swal)
+        MySwal.fire({
+          title: 'Ya existe un usuario con los datos ingresados',
+          icon: 'error',
+          confirmButtonColor: '#2563EB'
+        })
+      })
   }
 
   const { register, handleSubmit, formState: { errors } } = useForm()
