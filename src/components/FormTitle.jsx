@@ -1,28 +1,28 @@
 import { Link } from 'react-router-dom'
 
-const LoginTitle = () => {
+const FormTitle = ({ title, text, to, linkText }) => {
   return (
     <>
       <h2
         tabIndex='0'
         className='focus:outline-none text-2xl font-extrabold leading-6 text-gray-800'
       >
-        Inicia sesión
+        {title}
       </h2>
       <p
         tabIndex='0'
         className='focus:outline-none text-sm mt-4 mb-4 font-medium leading-none text-gray-500'
       >
-        ¿No tenes una cuenta?
+        {text}
         <Link
-          to='/register'
+          to={to}
           className='mx-2 hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer'
         >
-          Registrate acá
+          {linkText}
         </Link>
       </p>
     </>
   )
 }
 
-export default LoginTitle
+export default FormTitle
