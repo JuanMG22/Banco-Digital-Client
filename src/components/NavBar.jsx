@@ -5,13 +5,11 @@ import { navLinks } from '../services/navLinks'
 import { RiLoginBoxLine, RiLogoutBoxRLine } from 'react-icons/ri'
 
 const NavBar = () => {
-  const { logOut } = useContext(userContext)
-
-  const token = localStorage.getItem('token')
+  const { logOut, token } = useContext(userContext)
 
   const navBarLogin = token ? 'hidden' : 'flex items-center'
   const navBarLogout = token ? 'flex items-center' : 'hidden'
-  const navBarLoginLink = token ? 'flex-grow' : ''
+  const navBarLoginLink = token && 'flex-grow'
   return (
     <header>
       <nav

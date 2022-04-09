@@ -1,31 +1,34 @@
-import { createContext, useState } from 'react'
+import { createContext } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 export const userContext = createContext()
 
 const UserProvider = ({ children }) => {
-  const [login, setLogin] = useState(false)
-
   const token = localStorage.getItem('token')
 
   const navigate = useNavigate()
 
-  const signIn = () => {
-    if (token) {
-      setLogin(true)
-    }
+  const showModal = (title) => {
+    const MySwal = withReactContent(Swal)
+    MySwal.fire({
+      title: title,
+      icon: 'error',
+      confirmButtonColor: '#2563EB'
+    })
   }
 
   const logOut = () => {
     localStorage.clear()
-    setLogin(false)
     navigate('/')
   }
 
   const contextValue = {
-    login,
-    signIn,
-    logOut
+    token,
+    logOut,
+    navigate,
+    showModal
   }
 
   return (
