@@ -1,7 +1,17 @@
-import React from 'react'
-import { Outlet, Link } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { userContext } from '../context/UserProvider'
+import { navLinks } from '../services/navLinks'
+import { RiLoginBoxLine, RiLogoutBoxRLine } from 'react-icons/ri'
 
 const NavBar = () => {
+  const { logOut } = useContext(userContext)
+
+  const token = localStorage.getItem('token')
+
+  const navBarLogin = token ? 'hidden' : 'flex items-center'
+  const navBarLogout = token ? 'flex items-center' : 'hidden'
+  const navBarLoginLink = token ? 'flex-grow' : ''
   return (
     <header>
       <nav
@@ -23,40 +33,44 @@ const NavBar = () => {
           </div>
         </div>
 
-        <div className='menu w-full flex-grow lg:flex lg:items-center lg:w-auto lg:px-3 px-8'>
-          <div className='text-md font-bold text-white lg:flex-grow'>
-            <Link
-              to='/user'
-              className='block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
-            >
-              Saldo
-            </Link>
-            <Link
-              to='/movimientos'
-              className=' block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
-            >
-              Movimientos
-            </Link>
-            <a
-              href='#responsive-header'
-              className='block mt-4 lg:inline-block lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
-            >
-              Perfil
-            </a>
+        <div className={`${navBarLoginLink} menu w-full lg:flex lg:items-center lg:w-auto lg:px-3 px-8`}>
+          <div className={`${navBarLogout} text-md font-bold text-white lg:flex-grow`}>
+
+            {
+              navLinks.map(link => (
+                <Link
+                  key={link.id}
+                  to={link.route}
+                  className='mt-4 lg:mt-0 hover:text-white px-4 py-2 rounded hover:bg-blue-700 mr-2'
+                >
+                  {link.text}
+                </Link>
+              ))
+            }
           </div>
 
-          <div className='flex '>
+          <div className='flex'>
 
             <Link
               to='/login'
-              className=' block text-md px-4  ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0'
-            >login
+              className={`${navBarLogin} text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0`}
+            >
+              Iniciar Sesión
+              <RiLoginBoxLine className='text-3xl ml-1' />
+            </Link>
+
+            <Link
+              to='/login'
+              onClick={logOut}
+              className={`${navBarLogout} text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0`}
+            >
+              Cerrar Sesión
+              <RiLogoutBoxRLine className='text-3xl ml-1' />
             </Link>
           </div>
         </div>
 
       </nav>
-      <Outlet />
     </header>
   )
 }

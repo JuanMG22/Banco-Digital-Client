@@ -9,9 +9,15 @@
     "lint": "npx standard --fix"
   },
   "dependencies": {
+    "@sweetalert2/theme-wordpress-admin": "^5.0.10",
+    "axios": "^0.26.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-router-dom": "^6.2.2"
+    "react-hook-form": "^7.29.0",
+    "react-icons": "^4.3.1",
+    "react-router-dom": "^6.2.2",
+    "sweetalert2": "^11.4.8",
+    "sweetalert2-react-content": "^4.2.0"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
