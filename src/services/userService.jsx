@@ -23,4 +23,9 @@ const getUser = (userId) => {
   return request.then(response => response.data)
 }
 
-export default { userLogin, userRegister, getUser }
+const NewMovement = (movementData) => {
+  const request = axios.post(`${baseUrl}/movements`, movementData)
+  return request.then(response => response.data)
+}
+
+export default { userLogin, userRegister, getUser, NewMovement }

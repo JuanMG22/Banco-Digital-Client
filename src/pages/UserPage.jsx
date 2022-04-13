@@ -12,6 +12,7 @@ const UserPage = () => {
       .then(res => {
         setUserData(res.balance)
       })
+      .catch(error => console.log(error))
   }, [])
   return (
     <section className='flex flex-col lg:flex-row justify-evenly  items-center h-[50rem] gap-x-3'>
