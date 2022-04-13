@@ -1,29 +1,25 @@
 import React from 'react'
-import homeImg from '../img/home-image.jpg'
-import perfil from '../img/perfil.png'
-import saldo from '../img/saldo.png'
-import movimientos from '../img/movimientos.png'
-import { Link } from 'react-router-dom'
+import TitleHome from '../components/TitleHome'
+import SubTitleHome from '../components/SubTitleHome'
+import home from '../img/home-user.jpg'
+import Cards from '../components/Cards'
 
 const Home = () => {
-  const token = localStorage.getItem('token')
-
-  const visible = token ? 'flex' : 'hidden'
   return (
-    <div className={`${visible} flex-col mt-[8rem] h-[40rem] justify-center items-center`}>
-      <img src={homeImg} alt='' className={`w-[80rem] ${visible}`} />
-      <div className='flex w-[70rem] justify-evenly mt-5'>
-        <Link to='/perfil'>
-          <img src={perfil} alt='' className={`w-[18rem] ${visible}`} />
-        </Link>
-        <Link to='/movimientos'>
-          <img src={movimientos} alt='' className={`w-[18rem] ${visible}`} />
-        </Link>
-        <Link to='/user'>
-          <img src={saldo} alt='' className={`w-[18rem] ${visible}`} />
-        </Link>
+    <section className='mx-auto'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-1 justify-center py-16'>
+        <div className='col-span-1 row-span-1 lg:mt-10 pl-10'><TitleHome>Bienvenido a tu banco </TitleHome></div>
+
+        <div className='col-span-1 row-start-2 pl-10'><SubTitleHome>Revisa aqui toda la información de tu cuenta </SubTitleHome></div>
+
+        <div className='md:row-start-1 row-end-4'>
+          <img className='min-w-full md:min-w-0 my-6 lg:min-h-full max-w-xl' src={home} alt='home_user' />
+        </div>
+
       </div>
-    </div>
+      <Cards />
+
+    </section>
   )
 }
 
