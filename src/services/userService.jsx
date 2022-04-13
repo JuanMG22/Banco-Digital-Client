@@ -1,5 +1,5 @@
 import axios from 'axios'
-const baseUrl = 'https://banco-digital-nc.herokuapp.com'
+const baseUrl = 'http://localhost:4001'
 
 const userLogin = (userData) => {
   const request = axios.post(`${baseUrl}/login`, userData)
@@ -7,7 +7,9 @@ const userLogin = (userData) => {
   return request
     .then(response => {
       const tokenRecibido = response.data.token
+      const userId = response.data.id
       localStorage.setItem('token', tokenRecibido)
+      localStorage.setItem('userId', userId)
     })
 }
 
@@ -16,4 +18,9 @@ const userRegister = (userData) => {
   return request.then(response => response.data)
 }
 
-export default { userLogin, userRegister }
+const getUser = (userId) => {
+  const request = axios.get(`${baseUrl}/users/${userId}`)
+  return request.then(response => response.data)
+}
+
+export default { userLogin, userRegister, getUser }
