@@ -23,8 +23,13 @@ const getUser = (userId) => {
   return request.then(response => response.data)
 }
 
-const NewMovement = (movementData) => {
-  const request = axios.post(`${baseUrl}/movements`, movementData)
+const NewMovement = (movementData, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const request = axios.post(`${baseUrl}/movements`, movementData, config)
   return request.then(response => response.data)
 }
 
