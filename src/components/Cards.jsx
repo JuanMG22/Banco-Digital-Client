@@ -1,6 +1,6 @@
 const Cards = () => {
   return (
-    <div className='flex  flex-col  md:flex-row justify-center lg:justify-evenly flex-wrap gap-3 my-10'>
+    <div className='flex flex-col  md:flex-row justify-center lg:justify-evenly flex-wrap gap-3 my-10'>
       <div>
         <div className='bg-white max-w-xs min-h-xs md:w-54 lg:w-64 shadow-lg   mx-auto  border-b-4 border-blue-600 rounded-2xl overflow-hidden  hover:shadow-2xl transition duration-500 transform hover:scale-105 cursor-pointer'>
           <div className='bg-blue-600  flex h-20  items-center'>
