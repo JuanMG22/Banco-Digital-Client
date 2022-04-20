@@ -4,8 +4,7 @@ import ProfileForm from '../components/ProfileForm'
 
 function UserProfile () {
   return (
-    <section className='h-full'>
-      <h1>Perfil</h1>
+    <section className='h-[50rem] flex justify-evenly items-center'>
       <div className='border-b-2 block md:flex'>
         <BoxProfile />
         <ProfileForm />
