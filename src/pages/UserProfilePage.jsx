@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState, useEffect } from 'react'
 import Loader from '../components/Loader'
-import UserPageLoaded from '../components/UserPageLoaded'
+import UserProfile from '../components/UserProfile'
 import userService from '../services/userService'
 
-const UserPage = () => {
-  const [userBalance, setUserBalance] = useState(Number)
+function UserProfilePage () {
+  const [userData, setUserData] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -12,7 +12,7 @@ const UserPage = () => {
     userService
       .getUser(userId)
       .then(res => {
-        setUserBalance(res.balance)
+        setUserData(res)
         setLoading(false)
       })
       .catch(error => console.log(error))
@@ -22,10 +22,12 @@ const UserPage = () => {
       {
         loading
           ? <Loader />
-          : <UserPageLoaded balance={userBalance} />
+          : <UserProfile
+              userData={userData}
+            />
       }
     </>
   )
 }
 
-export default UserPage
+export default UserProfilePage

@@ -1,18 +1,22 @@
 import { useEffect, useState } from 'react'
 import Loader from '../components/Loader'
-import UserPageLoaded from '../components/UserPageLoaded'
+import MovementsLoaded from '../components/MovementsLoaded'
+
 import userService from '../services/userService'
 
-const UserPage = () => {
-  const [userBalance, setUserBalance] = useState(Number)
+const MovementsPage = () => {
+  const [movementsData, setMovementsData] = useState([])
   const [loading, setLoading] = useState(true)
+  const [form, setForm] = useState(false)
+
+  const showForm = () => setForm(true)
 
   useEffect(() => {
     const userId = localStorage.getItem('userId')
     userService
       .getUser(userId)
       .then(res => {
-        setUserBalance(res.balance)
+        setMovementsData(res.movements)
         setLoading(false)
       })
       .catch(error => console.log(error))
@@ -22,10 +26,14 @@ const UserPage = () => {
       {
         loading
           ? <Loader />
-          : <UserPageLoaded balance={userBalance} />
+          : <MovementsLoaded
+              movementsData={movementsData}
+              form={form}
+              showForm={showForm}
+            />
       }
     </>
   )
 }
 
-export default UserPage
+export default MovementsPage

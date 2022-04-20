@@ -1,4 +1,5 @@
 import avatar from '../img/user-avatar.png'
+import BtnSm from './BtnSm'
 
 function BoxProfile () {
   return (
@@ -8,10 +9,10 @@ function BoxProfile () {
         <div className='w-full flex justify-center'>
           <img className='max-w-xs items-center w-[12rem] h-[12rem] object-cover rounded-full border' src={avatar} alt='user-avatar' />
         </div>
-        <span className='text-xl font-semibold block'>Admin Profile</span>
-        <button className='-mt-2 text-md font-bold text-white bg-blue-600 rounded px-5 py-2 hover:bg-blue-700'>
+        <span className='text-xl font-semibold block'>Perfil de Usuario</span>
+        <BtnSm>
           Editar
-        </button>
+        </BtnSm>
         <span className='text-gray-600'>
           Esta información es secreta así que ten cuidado.
         </span>

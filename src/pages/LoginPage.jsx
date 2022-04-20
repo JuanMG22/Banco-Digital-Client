@@ -3,8 +3,8 @@ import LoginForm from '../components/LoginForm'
 
 const LoginPage = () => {
   return (
-    <section className='flex justify-center items-center'>
-      <div className='bg-white shadow-gray-600 shadow-lg rounded lg:w-1/3  md:w-1/2 p-10 mt-32'>
+    <section className='flex justify-center items-center h-[42rem]'>
+      <div className='bg-white shadow-gray-600 shadow-lg rounded w-[23rem] lg:w-1/3   xl:w-1/4 p-10'>
         <FormTitle
           to='/register'
           title='Inicia Sesión'

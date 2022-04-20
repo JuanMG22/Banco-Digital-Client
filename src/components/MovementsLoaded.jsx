@@ -1,25 +1,9 @@
-import { useEffect, useState } from 'react'
-import Btn from '../components/Btn'
-import MovementsFilter from '../components/MovementsFilter'
-import MovementsTable from '../components/MovementsTable'
-import NewMovement from '../components/NewMovement'
-import userService from '../services/userService'
+import Btn from './Btn'
+import MovementsFilter from './MovementsFilter'
+import MovementsTable from './MovementsTable'
+import NewMovement from './NewMovement'
 
-export const Movements = () => {
-  const [movementsData, setMovementsData] = useState([])
-  const [form, setForm] = useState(false)
-
-  const showForm = () => setForm(true)
-
-  useEffect(() => {
-    const userId = localStorage.getItem('userId')
-    userService
-      .getUser(userId)
-      .then(res => {
-        setMovementsData(res.movements)
-      })
-      .catch(error => console.log(error))
-  }, [])
+const MovementsLoaded = ({ form, movementsData, showForm }) => {
   return (
     <section className='antialiased font-sans my-6 mx-6'>
       <div className='container mx-auto px-4 sm:px-8'>
@@ -69,4 +53,4 @@ export const Movements = () => {
   )
 }
 
-export default Movements
+export default MovementsLoaded
