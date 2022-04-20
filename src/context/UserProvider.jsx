@@ -22,6 +22,7 @@ const UserProvider = ({ children }) => {
   const logOut = () => {
     localStorage.clear()
     navigate('/')
+    window.location.reload()
   }
 
   const contextValue = {
