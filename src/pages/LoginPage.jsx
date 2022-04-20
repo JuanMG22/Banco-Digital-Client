@@ -1,7 +1,5 @@
 import FormTitle from '../components/FormTitle'
-import Hr from '../components/Hr'
 import LoginForm from '../components/LoginForm'
-import LoginWithList from '../components/LoginWithList'
 
 const LoginPage = () => {
   return (
@@ -14,8 +12,6 @@ const LoginPage = () => {
           linkText='Registrate acá'
         />
         <LoginForm />
-        <Hr />
-        <LoginWithList />
       </div>
     </section>
   )
