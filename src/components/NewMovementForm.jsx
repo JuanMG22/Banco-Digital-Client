@@ -7,6 +7,7 @@ import { useForm } from 'react-hook-form'
 const NewMovementForm = () => {
   const onSubmit = (data) => {
     const userId = localStorage.getItem('userId')
+    const token = localStorage.getItem('token')
 
     const movementData = {
       description: data.description,
@@ -15,7 +16,7 @@ const NewMovementForm = () => {
     }
 
     userService
-      .NewMovement(movementData)
+      .NewMovement(movementData, token)
       .then(() => location.reload())
   }
 
