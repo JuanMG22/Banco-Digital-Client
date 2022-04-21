@@ -18,7 +18,7 @@ const LoginForm = () => {
     userService
       .userLogin(userData)
       .then(() => navigate('/'))
-      .catch(() => showModal('Email o contraseña incorrectos'))
+      .catch(() => showModal('Email o contraseña incorrectos', 'error'))
   }
 
   const { register, handleSubmit, formState: { errors } } = useForm()

@@ -2,8 +2,9 @@ import React, { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { userContext } from '../context/UserProvider'
 import { navLinks } from '../services/navLinks'
-import { RiLoginBoxLine, RiLogoutBoxRLine } from 'react-icons/ri'
+import { FaSignInAlt, FaSignOutAlt } from 'react-icons/fa'
 import userService from '../services/userService'
+import NavBarMobile from './NavBarMobile'
 
 const NavBar = () => {
   const { logOut, token } = useContext(userContext)
@@ -15,17 +16,19 @@ const NavBar = () => {
 
   useEffect(() => {
     const userId = localStorage.getItem('userId')
-    userService
-      .getUser(userId)
-      .then(res => {
-        setUserName(res.name)
-      })
-      .catch(error => console.log(error))
+    if (userId) {
+      userService
+        .getUser(userId)
+        .then(res => {
+          setUserName(res.name)
+        })
+        .catch(error => console.log(error))
+    }
   }, [token])
   return (
     <header>
       <nav
-        className='flex items-center justify-between flex-wrap bg-blue-600 py-4 lg:px-12 w-full'
+        className='flex items-center justify-between flex-wrap bg-blue-600 py-4 lg:px-12 w-full border-b border-gray-400 border-opacity-10'
       >
         <div className='flex justify-between items-center lg:w-auto w-full pl-6 pr-2 pb-0 lg:pb-0'>
           <div className='flex items-center flex-shrink-0 text-blue-50 mr-16'>
@@ -35,18 +38,11 @@ const NavBar = () => {
           </div>
           <Link
             to='/'
-            className={`${navBarLogin} lg:hidden text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white  lg:mt-0`}
-          >
-            Iniciar Sesión
-            <RiLogoutBoxRLine className='text-3xl ml-1' />
-          </Link>
-          <Link
-            to='/'
             className={`${navBarLogout} lg:hidden text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white  lg:mt-0`}
           >
             {userName}
             <button onClick={logOut} className='hover:bg-blue-700 ml-1'>
-              <RiLogoutBoxRLine className='text-3xl' />
+              <FaSignOutAlt className='text-3xl' />
             </button>
           </Link>
         </div>
@@ -74,7 +70,7 @@ const NavBar = () => {
               className={`${navBarLogin} text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0`}
             >
               Iniciar Sesión
-              <RiLoginBoxLine className='text-3xl ml-1' />
+              <FaSignInAlt className='text-3xl ml-1' />
             </Link>
 
             <Link
@@ -83,12 +79,14 @@ const NavBar = () => {
               className={`${navBarLogout} text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white mt-4 hover:bg-blue-700 lg:mt-0`}
             >
               {userName}
-              <RiLogoutBoxRLine className='text-3xl ml-1' />
+              <FaSignOutAlt className='text-3xl ml-1' />
             </Link>
           </div>
         </div>
 
       </nav>
+
+      <NavBarMobile token={token} />
     </header>
   )
 }

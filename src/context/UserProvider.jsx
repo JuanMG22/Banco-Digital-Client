@@ -10,11 +10,11 @@ const UserProvider = ({ children }) => {
 
   const navigate = useNavigate()
 
-  const showModal = (title) => {
+  const showModal = (title, icon) => {
     const MySwal = withReactContent(Swal)
     MySwal.fire({
       title: title,
-      icon: 'error',
+      icon: icon,
       confirmButtonColor: '#2563EB'
     })
   }

@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
+import { Navigate } from 'react-router-dom'
 import Loader from '../components/Loader'
 import MovementsLoaded from '../components/MovementsLoaded'
+import { userContext } from '../context/UserProvider'
 
 import userService from '../services/userService'
 
@@ -10,6 +12,7 @@ const MovementsPage = () => {
   const [form, setForm] = useState(false)
 
   const showForm = () => setForm(true)
+  const { token } = useContext(userContext)
 
   useEffect(() => {
     const userId = localStorage.getItem('userId')
@@ -23,6 +26,7 @@ const MovementsPage = () => {
   }, [])
   return (
     <>
+      {!token && <Navigate to='/' />}
       {
         loading
           ? <Loader />
