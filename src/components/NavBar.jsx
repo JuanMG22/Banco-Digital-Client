@@ -15,12 +15,14 @@ const NavBar = () => {
 
   useEffect(() => {
     const userId = localStorage.getItem('userId')
-    userService
-      .getUser(userId)
-      .then(res => {
-        setUserName(res.name)
-      })
-      .catch(error => console.log(error))
+    if (userId) {
+      userService
+        .getUser(userId)
+        .then(res => {
+          setUserName(res.name)
+        })
+        .catch(error => console.log(error))
+    }
   }, [token])
   return (
     <header>
@@ -34,7 +36,7 @@ const NavBar = () => {
             </Link>
           </div>
           <Link
-            to='/'
+            to='/login'
             className={`${navBarLogin} lg:hidden text-md px-4 ml-2 py-2 rounded text-white font-bold hover:text-white  lg:mt-0`}
           >
             Iniciar Sesión
