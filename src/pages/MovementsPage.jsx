@@ -24,7 +24,7 @@ const MovementsPage = () => {
         setLoading(false)
       })
       .catch(error => console.log(error))
-  }, [])
+  }, [movementsData])
   return (
     <>
       <Helmet>

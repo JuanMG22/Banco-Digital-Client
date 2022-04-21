@@ -3,11 +3,13 @@ import Btn from './Btn'
 import Label from './Label'
 import FormError from './FormError'
 import { useForm } from 'react-hook-form'
+import { userContext } from '../context/UserProvider'
+import { useContext } from 'react'
 
 const NewMovementForm = () => {
+  const { token, showModal } = useContext(userContext)
   const onSubmit = (data) => {
     const userId = localStorage.getItem('userId')
-    const token = localStorage.getItem('token')
 
     const movementData = {
       description: data.description,
@@ -17,7 +19,10 @@ const NewMovementForm = () => {
 
     userService
       .NewMovement(movementData, token)
-      .then(() => location.reload())
+      .then(() => {
+        showModal('Movimiento Creado', 'success')
+      })
+      .catch(() => showModal('Ocurrió un error', 'error'))
   }
 
   const { register, handleSubmit, formState: { errors } } = useForm()
