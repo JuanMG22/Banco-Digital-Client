@@ -17,7 +17,10 @@ const LoginForm = () => {
 
     userService
       .userLogin(userData)
-      .then(() => navigate('/'))
+      .then(() => {
+        showModal('Inicio de sesión exitoso', 'success')
+        navigate('/')
+      })
       .catch(() => showModal('Email o contraseña incorrectos', 'error'))
   }
 

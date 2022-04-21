@@ -1,6 +1,7 @@
 import React from 'react'
 import HomeUser from '../components/HomeUser'
 import HomeNotUser from '../components/HomeNotUser'
+import Helmet from 'react-helmet'
 
 const Home = () => {
   const token = localStorage.getItem('token')
@@ -8,6 +9,9 @@ const Home = () => {
   return (
 
     <>
+      <Helmet>
+        <title>Banco Digital - Home</title>
+      </Helmet>
       {token ? <HomeUser /> : <HomeNotUser />}
     </>
   )
