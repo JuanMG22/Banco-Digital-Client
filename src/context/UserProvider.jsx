@@ -15,7 +15,25 @@ const UserProvider = ({ children }) => {
     MySwal.fire({
       title: title,
       icon: icon,
-      confirmButtonColor: '#2563EB'
+      background: '#fff',
+      confirmButtonColor: '#2563EB',
+      confirmButtonText: 'Aceptar',
+      customClass: {
+        title: 'modal-title',
+        confirmButton: 'modal-confirm-btn'
+      }
+    })
+  }
+
+  const showLoading = (title) => {
+    const MySwal = withReactContent(Swal)
+    MySwal.fire({
+      title: title,
+      allowOutsideClick: false,
+      showConfirmButton: false,
+      willOpen: () => {
+        MySwal.showLoading()
+      }
     })
   }
 
@@ -29,7 +47,8 @@ const UserProvider = ({ children }) => {
     token,
     logOut,
     navigate,
-    showModal
+    showModal,
+    showLoading
   }
 
   return (

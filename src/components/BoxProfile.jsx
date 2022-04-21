@@ -1,5 +1,5 @@
 import avatar from '../img/user-avatar.png'
-import BtnSm from './BtnSm'
+import Btn from './Btn'
 
 function BoxProfile () {
   return (
@@ -10,9 +10,9 @@ function BoxProfile () {
           <img className='max-w-xs items-center w-[12rem] h-[12rem] object-cover rounded-full border' src={avatar} alt='user-avatar' />
         </div>
         <span className='text-xl font-semibold block'>Perfil de Usuario</span>
-        <BtnSm>
+        <Btn btnType='btnSm'>
           Editar
-        </BtnSm>
+        </Btn>
         <span className='text-gray-600'>
           Esta información es secreta así que ten cuidado.
         </span>

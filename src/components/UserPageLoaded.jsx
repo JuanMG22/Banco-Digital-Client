@@ -2,9 +2,9 @@ import saldo from '../img/saldo-01.jpg'
 
 const UserPageLoaded = ({ balance }) => {
   return (
-    <section className='flex flex-col lg:flex-row justify-evenly  items-center h-[50rem] gap-x-3'>
-      <div className='pl-6 pt-6'>
-        <div className='w-96 h-90 bg-white border-2 border-gray-300 p-6 rounded-xl tracking-wide shadow-lg'>
+    <section className='flex flex-col lg:flex-row justify-evenly items-center h-[38.8rem] gap-x-3 mt-14 md:mt-0'>
+      <div className='pt-6'>
+        <div className='w-96 h-90 max-w-xs  bg-white border-2 border-gray-300 p-6 rounded-xl tracking-wide shadow-lg'>
           <div className='mb-4 divide-y divide-slate-700 '>
             <h2 className='text-center font-semibold text-2xl text-blue-600 py-5'>
               Su saldo es
@@ -16,7 +16,7 @@ const UserPageLoaded = ({ balance }) => {
         </div>
       </div>
       <div>
-        <img className='min-h-full max-w-xl' src={saldo} alt='saldo' />
+        <img className='min-h-full max-w-xs md:max-w-lg lg:max-w-xl' src={saldo} alt='saldo' />
       </div>
     </section>
   )
