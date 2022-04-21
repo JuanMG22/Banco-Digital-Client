@@ -19,8 +19,11 @@ const RegisterForm = () => {
 
     userService
       .userRegister(userData)
-      .then(() => navigate('/'))
-      .catch(() => showModal('Ya existe un usuario con los datos ingresados'))
+      .then(() => {
+        showModal('Cuenta creada con exito', 'success')
+        navigate('/login')
+      })
+      .catch(() => showModal('Ya existe un usuario con los datos ingresados', 'error'))
   }
 
   const { register, handleSubmit, formState: { errors } } = useForm()

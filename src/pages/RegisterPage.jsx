@@ -9,7 +9,7 @@ const RegisterPage = () => {
   return (
     <>
       {token && <Navigate to='/' />}
-      <section className='flex justify-center items-center h-[42rem]'>
+      <section className='flex justify-center items-center h-[40.3rem]'>
         <div className='bg-white shadow-gray-600 shadow-lg rounded w-[23rem] lg:w-1/3   xl:w-1/4 p-10'>
           <FormTitle
             to='/login'
