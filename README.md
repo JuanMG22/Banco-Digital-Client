@@ -9,6 +9,8 @@
 
 ### App Preview
 ![banco digital screen](https://user-images.githubusercontent.com/88951217/164337251-a9f6f58a-0eaa-4ec6-a420-9cc43d53c688.png)
+![banco digital homeUser](https://user-images.githubusercontent.com/88951217/164500823-5b8d22cf-8358-4259-842a-6e76901a8366.png)
+![banco digital saldo](https://user-images.githubusercontent.com/88951217/164500867-d2cd36b0-aa7c-4357-ac46-c7edd268b0a8.png)
 
 
 ---
