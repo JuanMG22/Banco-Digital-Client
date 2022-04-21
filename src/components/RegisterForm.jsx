@@ -1,13 +1,14 @@
-import axios from 'axios'
+import { useContext } from 'react'
+import { userContext } from '../context/UserProvider'
+import userService from '../services/userService'
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'react-router-dom'
-import Swal from 'sweetalert2'
-import withReactContent from 'sweetalert2-react-content'
 import Btn from './Btn'
 import Label from './Label'
+import FormError from './FormError'
 
 const RegisterForm = () => {
-  const navigate = useNavigate()
+  const { navigate, showModal } = useContext(userContext)
+
   const onSubmit = (data) => {
     const userData = {
       name: data.name,
@@ -16,20 +17,13 @@ const RegisterForm = () => {
       password: data.password
     }
 
-    axios
-      .post('https://banco-digital-nc.herokuapp.com/register', userData)
-      .then(response => {
-        console.log(response)
-        navigate('/')
+    userService
+      .userRegister(userData)
+      .then(() => {
+        showModal('Cuenta creada con exito', 'success')
+        navigate('/login')
       })
-      .catch(() => {
-        const MySwal = withReactContent(Swal)
-        MySwal.fire({
-          title: 'Ya existe un usuario con los datos ingresados',
-          icon: 'error',
-          confirmButtonColor: '#2563EB'
-        })
-      })
+      .catch(() => showModal('Ya existe un usuario con los datos ingresados', 'error'))
   }
 
   const { register, handleSubmit, formState: { errors } } = useForm()
@@ -41,12 +35,11 @@ const RegisterForm = () => {
         type='text'
         aria-labelledby='name'
         name='name'
-        className='bg-gray-50 border rounded.lg  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2'
+        className='input'
         id='name'
         {...register('name', {
           required: {
             value: true,
-            maxLength: 20,
             message: 'Ingrese un nombre'
           },
           pattern: {
@@ -55,20 +48,17 @@ const RegisterForm = () => {
           }
         })}
       />
-      {errors.name && (
-        <p className='text-red-700 my-1'>{errors.name.message}</p>
-      )}
+      {errors.name && (<FormError err={errors.name.message} />)}
       <Label to='lastName' text='Apellido' />
       <input
         type='text'
         aria-labelledby='lastName'
         name='lastName'
         id='lastName'
-        className='bg-gray-50 border rounded.lg  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2'
+        className='input'
         {...register('lastName', {
           required: {
             value: true,
-            maxLength: 20,
             message: 'Ingrese un apellido'
           },
           pattern: {
@@ -77,20 +67,17 @@ const RegisterForm = () => {
           }
         })}
       />
-      {errors.lastName && (
-        <p className='text-red-700 my-1'>{errors.lastName.message}</p>
-      )}
+      {errors.lastName && (<FormError err={errors.lastName.message} />)}
       <Label to='email' text='Email' />
       <input
-        type='email'
+        type='text'
         aria-labelledby='email'
         name='email'
-        className='bg-gray-50 border rounded.lg  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2'
+        className='input'
         id='email'
         {...register('email', {
           required: {
             value: true,
-            maxLength: 20,
             message: 'Ingrese un email'
           },
           pattern: {
@@ -99,32 +86,25 @@ const RegisterForm = () => {
           }
         })}
       />
-      {errors.email && (
-        <p className='text-red-700 my-1'>{errors.email.message}</p>
-      )}
+      {errors.email && (<FormError err={errors.email.message} />)}
       <Label to='pass' text='Contraseña' />
       <input
         type='password'
         aria-labelledby='password'
         name='password'
-        className='bg-gray-50 border rounded.lg  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2'
+        className='input'
         id='pass'
         {...register('password', {
           required: {
             value: true,
-            maxLength: 20,
             message: 'Ingrese una contraseña'
           }
         })}
       />
-      {errors.password && (
-        <p className='text-red-700 my-1'>{errors.password.message}</p>
-      )}
-      <div className='mt-8'>
-        <Btn type='submit'>
-          Registrarse
-        </Btn>
-      </div>
+      {errors.password && (<FormError err={errors.password.message} />)}
+      <Btn>
+        Registrarse
+      </Btn>
     </form>
   )
 }
