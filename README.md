@@ -1,6 +1,6 @@
 #  Banco Digital
 
-## Banco Digital, full stack project. Frontend with React and TailwindCSS. Backend with Nodejs, Express and MongoDB database
+## Banco Digital, full stack web & PWA project. Frontend with React and TailwindCSS. Backend with Nodejs, Express and MongoDB database
 
 
 
