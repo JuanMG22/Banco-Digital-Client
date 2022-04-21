@@ -7,6 +7,7 @@ export const userContext = createContext()
 
 const UserProvider = ({ children }) => {
   const token = localStorage.getItem('token')
+  const userId = localStorage.getItem('userId')
 
   const navigate = useNavigate()
 
@@ -48,7 +49,8 @@ const UserProvider = ({ children }) => {
     logOut,
     navigate,
     showModal,
-    showLoading
+    showLoading,
+    userId
   }
 
   return (
