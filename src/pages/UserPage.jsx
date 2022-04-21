@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
+import Helmet from 'react-helmet'
 import { Navigate } from 'react-router-dom'
 import Loader from '../components/Loader'
 import UserPageLoaded from '../components/UserPageLoaded'
@@ -22,6 +23,9 @@ const UserPage = () => {
   }, [])
   return (
     <>
+      <Helmet>
+        <title>Banco Digital - Saldo</title>
+      </Helmet>
       {!token && <Navigate to='/' />}
       {
         loading

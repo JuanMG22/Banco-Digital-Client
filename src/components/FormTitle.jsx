@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const FormTitle = ({ title, text, to, linkText }) => {
+const FormTitle = ({ title, text, to, linkText, click }) => {
   return (
     <>
       <h2
@@ -15,6 +15,7 @@ const FormTitle = ({ title, text, to, linkText }) => {
       >
         {text}
         <Link
+          onClick={click}
           to={to}
           className='mx-2 hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer'
         >

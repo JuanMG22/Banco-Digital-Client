@@ -1,3 +1,5 @@
+import avatar from '../img/user-avatar.png'
+
 const Movement = ({ date, description, amount }) => {
   return (
     <tr>
@@ -6,7 +8,7 @@ const Movement = ({ date, description, amount }) => {
           <div className='flex-shrink-0 w-10 h-10'>
             <img
               className='w-full h-full rounded-full'
-              src='https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.2&w=160&h=160&q=80'
+              src={avatar}
               alt=''
             />
           </div>

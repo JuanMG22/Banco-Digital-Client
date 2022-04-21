@@ -22,6 +22,15 @@ const getUser = (userId) => {
   const request = axios.get(`${baseUrl}/users/${userId}`)
   return request.then(response => response.data)
 }
+const editUser = (userId, userData, token) => {
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  }
+  const request = axios.put(`${baseUrl}/users/${userId}`, userData, config)
+  return request.then(response => response.data)
+}
 
 const NewMovement = (movementData, token) => {
   const config = {
@@ -33,4 +42,4 @@ const NewMovement = (movementData, token) => {
   return request.then(response => response.data)
 }
 
-export default { userLogin, userRegister, getUser, NewMovement }
+export default { userLogin, userRegister, getUser, NewMovement, editUser }

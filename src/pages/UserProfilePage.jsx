@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Helmet from 'react-helmet'
 import Loader from '../components/Loader'
 import UserProfile from '../components/UserProfile'
 import userService from '../services/userService'
@@ -19,6 +20,9 @@ function UserProfilePage () {
   }, [])
   return (
     <>
+      <Helmet>
+        <title>Banco Digital - Perfil</title>
+      </Helmet>
       {
         loading
           ? <Loader />

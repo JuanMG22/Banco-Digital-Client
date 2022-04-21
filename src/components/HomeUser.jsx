@@ -6,7 +6,7 @@ import Cards from './Cards'
 
 function HomeUser () {
   return (
-    <section className='mx-auto'>
+    <section className='mx-auto mt-14 md:mt-0'>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-1 justify-center py-16'>
         <div className='col-span-1 row-span-1 lg:mt-10 xl:pl-10'>
           <TitleHome>

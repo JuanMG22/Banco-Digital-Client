@@ -28,7 +28,7 @@ const NavBar = () => {
   return (
     <header>
       <nav
-        className='flex items-center justify-between flex-wrap bg-blue-600 py-4 lg:px-12 w-full border-b border-gray-400 border-opacity-10'
+        className='flex items-center justify-between flex-wrap bg-blue-600 py-4 lg:px-12 w-full border-b border-gray-400 border-opacity-10 z-50 fixed top-0 md:static'
       >
         <div className='flex justify-between items-center lg:w-auto w-full pl-6 pr-2 pb-0 lg:pb-0'>
           <div className='flex items-center flex-shrink-0 text-blue-50 mr-16'>

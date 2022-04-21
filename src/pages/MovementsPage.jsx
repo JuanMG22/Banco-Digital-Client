@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from 'react'
+import Helmet from 'react-helmet'
 import { Navigate } from 'react-router-dom'
 import Loader from '../components/Loader'
 import MovementsLoaded from '../components/MovementsLoaded'
@@ -23,9 +24,12 @@ const MovementsPage = () => {
         setLoading(false)
       })
       .catch(error => console.log(error))
-  }, [])
+  }, [movementsData])
   return (
     <>
+      <Helmet>
+        <title>Banco Digital - Movimientos</title>
+      </Helmet>
       {!token && <Navigate to='/' />}
       {
         loading
