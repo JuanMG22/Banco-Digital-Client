@@ -12,7 +12,7 @@ const MovementsPage = () => {
   const [loading, setLoading] = useState(true)
   const [form, setForm] = useState(false)
 
-  const showForm = () => setForm(true)
+  const showForm = () => setForm(!form)
   const { token } = useContext(userContext)
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const MovementsPage = () => {
         setLoading(false)
       })
       .catch(error => console.log(error))
-  }, [movementsData])
+  }, [])
   return (
     <>
       <Helmet>
@@ -38,6 +38,7 @@ const MovementsPage = () => {
               movementsData={movementsData}
               form={form}
               showForm={showForm}
+              updateMovements={setMovementsData}
             />
       }
     </>

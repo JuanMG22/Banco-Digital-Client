@@ -6,19 +6,29 @@ import FormError from './FormError'
 import Btn from './Btn'
 import { userContext } from '../context/UserProvider'
 
-function ProfileForm ({ name, lastName, email }) {
+function ProfileForm ({ name, lastName, email, setUserData }) {
   const [showEditForm, setShowEditForm] = useState(false)
   const { token, userId, showModal } = useContext(userContext)
   const showForm = () => setShowEditForm(true)
 
+  const updateData = async () => {
+    const userId = localStorage.getItem('userId')
+    try {
+      const userData = await userService.getUser(userId)
+      setUserData(userData)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const onSubmit = (data) => {
     const email = { email: data.email.toLowerCase() }
-
     userService
       .editUser(userId, email, token)
       .then(() => {
         showModal('Los datos fueron actualizados', 'success')
         setShowEditForm(false)
+        updateData()
       })
       .catch((err) => console.log(err))
   }
@@ -48,6 +58,7 @@ function ProfileForm ({ name, lastName, email }) {
                     type='text'
                     aria-labelledby='email'
                     name='email'
+                    placeholder={email}
                     className='border-2 border-red-900 rounded-r px-4 py-2 w-full'
                     id='email'
                     {...register('email', {
@@ -61,7 +72,7 @@ function ProfileForm ({ name, lastName, email }) {
                       }
                     })}
                   />
-                : <input disabled type='text' className='border-1 rounded-r px-4 py-2 w-full' value={email} />
+                : <div disabled type='text' className='border-1 rounded-r px-4 py-2 w-full'>{email}</div>
             }
             {!showEditForm &&
               <button onClick={showForm} className='absolute'>

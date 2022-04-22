@@ -6,8 +6,16 @@ import { useForm } from 'react-hook-form'
 import { userContext } from '../context/UserProvider'
 import { useContext } from 'react'
 
-const NewMovementForm = () => {
-  const { token, showModal } = useContext(userContext)
+const NewMovementForm = ({ showForm, updateMovements }) => {
+  const { token, userId, showModal } = useContext(userContext)
+  const updateData = async () => {
+    try {
+      const userData = await userService.getUser(userId)
+      updateMovements(userData.movements)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const onSubmit = (data) => {
     const userId = localStorage.getItem('userId')
 
@@ -21,6 +29,8 @@ const NewMovementForm = () => {
       .NewMovement(movementData, token)
       .then(() => {
         showModal('Movimiento Creado', 'success')
+        updateData()
+        showForm()
       })
       .catch(() => showModal('Ocurrió un error', 'error'))
   }
