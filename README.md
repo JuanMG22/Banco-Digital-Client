@@ -15,16 +15,13 @@
 ![image](https://user-images.githubusercontent.com/88951217/164756642-56ce78ee-b80f-4b55-ae75-8c690bfc4e55.png)
 
 ### App in Mobile
-![image](https://user-images.githubusercontent.com/88951217/164757050-6f5e3183-e7dc-48a0-b865-ca1c43abe136.png)
+<div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757050-6f5e3183-e7dc-48a0-b865-ca1c43abe136.png"></div>
+<div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757328-e3016d83-7771-4226-9c17-0ef0cbb7793d.png"></div>
+<div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757112-b35ef953-a98a-43c9-8ea2-1d83d4f73159.png"></div>
+<div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757181-ed0054e1-a241-4dee-940a-114f0c5e229b.png"></div>
+<div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757478-d56b60e4-960c-41d4-b0e9-e768d357a426.png"></div>
+<div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757540-3d392cdd-47e8-4a81-895a-84ef4ad9cff9.png"></div>
 
-![image](https://user-images.githubusercontent.com/88951217/164757328-e3016d83-7771-4226-9c17-0ef0cbb7793d.png)
-![image](https://user-images.githubusercontent.com/88951217/164757112-b35ef953-a98a-43c9-8ea2-1d83d4f73159.png)
-
-![image](https://user-images.githubusercontent.com/88951217/164757181-ed0054e1-a241-4dee-940a-114f0c5e229b.png)
-
-![image](https://user-images.githubusercontent.com/88951217/164757478-d56b60e4-960c-41d4-b0e9-e768d357a426.png)
-
-![image](https://user-images.githubusercontent.com/88951217/164757540-3d392cdd-47e8-4a81-895a-84ef4ad9cff9.png)
 
 
 ---
