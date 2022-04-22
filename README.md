@@ -1,4 +1,5 @@
-#  Banco Digital
+#  <div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164761841-64059c1d-cf4c-4d3e-bdc0-2223fd3fbf5e.png" width="128"></div><div align="center">Banco Digital</div>
+
 
 ## Banco Digital, full stack web & PWA project. Frontend with React and TailwindCSS. Backend with Nodejs, Express and MongoDB database
 
@@ -14,7 +15,7 @@
 ![image](https://user-images.githubusercontent.com/88951217/164756590-72fe1d8f-9dfe-4d67-902e-57989498fea9.png)
 ![image](https://user-images.githubusercontent.com/88951217/164756642-56ce78ee-b80f-4b55-ae75-8c690bfc4e55.png)
 
-### App in Mobile
+### <div align="center">App in Mobile</div>
 <div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757050-6f5e3183-e7dc-48a0-b865-ca1c43abe136.png"></div>
 <div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757328-e3016d83-7771-4226-9c17-0ef0cbb7793d.png"></div>
 <div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757112-b35ef953-a98a-43c9-8ea2-1d83d4f73159.png"></div>
@@ -23,17 +24,6 @@
 <div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757540-3d392cdd-47e8-4a81-895a-84ef4ad9cff9.png"></div>
 
 
-
-## Banco Digital API
-
-### Backend developed with:
-- Node
-- Express
-- Mongoose
-- MongoDB
-- JWT
-
-### Repository:: [Banco Digital API](https://github.com/No-Country/C4-G16-T-Api)
 
 ---
 ### Initialize Project
@@ -55,14 +45,29 @@ Once the dependencies are installed, run the following command
     
     
 ---
+## Banco Digital API
+
+### Backend developed with:
+- Node
+- Express
+- Mongoose
+- MongoDB
+- JWT
+
+### Repository:: [Banco Digital API](https://github.com/No-Country/C4-G16-T-Api)
+---
 ### Main libraries used in this project
 
 | library                                                          | used                      |
 | ---------------------------------------------------------------- | ------------------------- |
 | [React Router Dom](https://reactrouter.com/)                     | Router lib for React      |
+| [Sweet Alert2](https://sweetalert2.github.io/l)                  | Sweet Alert2              |
 | [Axios](https://axios-http.com/docs/intro)                       | Promise based HTTP client |
 | [TailwindCSS](https://tailwindcss.com/)                          | CSS Framework             |
+| [React Helmet](https://github.com/nfl/react-helmet)              | SEO Lib in React          |
 | [React Icons](https://react-icons.github.io/react-icons/)        | React Icons Library       |
+| [Vite](https://vitejs.dev/)                                      | Next Generation Frontend Tooling      |
+| [Vite Plugin PWA](https://vite-plugin-pwa.netlify.app/)          |  PWA Framework-agnostic Plugin for Vite   |
 
 
 ### Pending tasks
