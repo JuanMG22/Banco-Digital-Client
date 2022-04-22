@@ -24,6 +24,17 @@
 
 
 
+## Banco Digital API
+
+### Backend developed with:
+- Node
+- Express
+- Mongoose
+- MongoDB
+- JWT
+
+### Repository:: [Banco Digital API](https://github.com/No-Country/C4-G16-T-Api)
+
 ---
 ### Initialize Project
 To start this project, you must clone or fork the repository
@@ -60,7 +71,7 @@ Once the dependencies are installed, run the following command
 
 
 ### Collaborators:
-
+- [Estefany Espinoza](https://github.com/EstefanyEH)   - Frontend Developer & UX/UI Designer
 - [Estefany Espinoza](https://github.com/EstefanyEH)   - Frontend Developer & UX/UI Designer
 - [Juan Manuel González](https://github.com/JuanMG22) - Full Stack Developer
 - [Sergio Cepeda](https://github.com/SergioCepeda) - Backend Developer
