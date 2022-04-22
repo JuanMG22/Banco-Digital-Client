@@ -23,6 +23,9 @@
 <div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757478-d56b60e4-960c-41d4-b0e9-e768d357a426.png" width="286"></div>
 <div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164757540-3d392cdd-47e8-4a81-895a-84ef4ad9cff9.png" width="286"></div>
 
+### <div align="center">App Installation</div>
+<div align="center" ><img src="https://user-images.githubusercontent.com/88951217/164770676-721c2273-d78e-48a1-a94b-f6e401e50088.gif"></div>
+
 
 
 ---
