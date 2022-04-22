@@ -72,7 +72,6 @@ Once the dependencies are installed, run the following command
 
 ### Collaborators:
 - [Estefany Espinoza](https://github.com/EstefanyEH)   - Frontend Developer & UX/UI Designer
-- [Estefany Espinoza](https://github.com/EstefanyEH)   - Frontend Developer & UX/UI Designer
 - [Juan Manuel González](https://github.com/JuanMG22) - Full Stack Developer
 - [Sergio Cepeda](https://github.com/SergioCepeda) - Backend Developer
 - [Lucas Montoby](https://github.com/LucasMontoby) - Backend Developer
