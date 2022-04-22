@@ -28,6 +28,7 @@ function UserProfilePage () {
           ? <Loader />
           : <UserProfile
               userData={userData}
+              setUserData={setUserData}
             />
       }
     </>

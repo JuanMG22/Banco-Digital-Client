@@ -1,8 +1,7 @@
 import FormTitle from './FormTitle'
 import NewMovementForm from './NewMovementForm'
 
-const NewMovement = () => {
-  const goBack = () => window.location.reload()
+const NewMovement = ({ showForm, updateMovements }) => {
   return (
     <section className='flex justify-center'>
       <div className='bg-white shadow-gray-600 shadow-lg rounded lg:w-1/3  md:w-1/2 p-10 mt-32'>
@@ -10,9 +9,8 @@ const NewMovement = () => {
           to='/movimientos'
           title='Crea un nuevo movimiento'
           linkText='Volver'
-          click={goBack}
         />
-        <NewMovementForm />
+        <NewMovementForm showForm={showForm} updateMovements={updateMovements} />
       </div>
     </section>
   )

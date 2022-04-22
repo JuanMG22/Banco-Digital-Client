@@ -3,7 +3,7 @@ import ProfileForm from './ProfileForm'
 import { useState } from 'react'
 import ProfileEdit from './ProfileEdit'
 
-const UserProfile = ({ userData }) => {
+const UserProfile = ({ userData, setUserData }) => {
   const { name, lastName, email } = userData
   const [editForm, setEditForm] = useState(false)
   const showForm = () => setEditForm(true)
@@ -19,6 +19,7 @@ const UserProfile = ({ userData }) => {
               name={name}
               lastName={lastName}
               email={email}
+              setUserData={setUserData}
             />
           </div>
           )}

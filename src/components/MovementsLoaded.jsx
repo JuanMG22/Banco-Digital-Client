@@ -5,7 +5,7 @@ import MovementsTable from './MovementsTable'
 import NewMovement from './NewMovement'
 import NotMovements from './NotMovements'
 
-const MovementsLoaded = ({ form, movementsData, showForm }) => {
+const MovementsLoaded = ({ form, movementsData, showForm, updateMovements }) => {
   const [searchData, setSearchData] = useState('')
 
   const handleSearchChange = (e) => {
@@ -19,10 +19,10 @@ const MovementsLoaded = ({ form, movementsData, showForm }) => {
         )
       : movementsData
   return (
-    <section className='antialiased font-sans my-6 mx-6 min-h-[35.8rem]'>
+    <section className='antialiased font-sans my-6 mx-6 min-h-[35.8rem] mt-20 md:mt-0'>
       <div className='container mx-auto px-4 sm:px-8'>
         <div className='py-8'>
-          {form && (<NewMovement />)}
+          {form && (<NewMovement showForm={showForm} updateMovements={updateMovements} />)}
           {!form && (
             <>
               <div>
