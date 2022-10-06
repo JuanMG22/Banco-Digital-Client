@@ -84,6 +84,5 @@ Once the dependencies are installed, run the following command
 - [Sergio Cepeda](https://github.com/SergioCepeda) - Backend Developer
 - [Lucas Montoby](https://github.com/LucasMontoby) - Backend Developer
 
-
 ---
 
